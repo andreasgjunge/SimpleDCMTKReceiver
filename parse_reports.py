@@ -19,10 +19,12 @@ def read_reports(file_name):
         
         # Iterate over the rows in the CSV file
         for row in csv_reader:
-            # Store the values in the "procedurestudyinstanceuid" fields as a tuple in the list
-            data.append({
-            'procedurestudyinstanceuid': row['procedurestudyinstanceuid']
-            })
+            # Sometimes, a case can contain multiple studies separated by a comma additionally
+            substrings = row['procedurestudyinstanceuid'].split(',')
+            for substring in substrings:    
+                data.append({
+                'procedurestudyinstanceuid': substring
+                })
 
     # The data is now stored in the "data" list
     return {'status': 'success', 'data': data}

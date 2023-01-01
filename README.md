@@ -46,5 +46,7 @@ The AET must be known to the PACS, from which you want to receive images.
     -d, --dry-run         Create and print out the movescu commands, but do not initiate move
     -v, --verbose         Print out additional information
 
-The CSV file specified in the -f option has to be put into the `reports` folder. The CSV file has to contain a field `procedurestudyinstanceuid`, but can also contain additional fields. Separator is `;`. All Study Instance UIDs will tried to be downloaded from the PACS
+The CSV file specified in the -f option has to be put into the `reports` folder. The CSV file has to contain a field `procedurestudyinstanceuid`, but can also contain additional fields. Separator for the csv file is `;`. All Study Instance UIDs will tried to be downloaded from the PACS.
+One line in the csv file is allowed to contain multiple Study Instance UIDs, which are separated by `,`.
+
 The received images are being stored to the images folder in the convention `images/study_instance_uid`
