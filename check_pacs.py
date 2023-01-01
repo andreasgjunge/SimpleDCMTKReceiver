@@ -20,5 +20,5 @@ def check_pacs(pacs_ip_adress, pacs_port, verbose):
     except Exception as e:
         if verbose:
             print("\033[31mCould not establish connection\033[0m")
-            print(e.stderr)
+            print("\033[31m{}\033[0m".format(e))
 
