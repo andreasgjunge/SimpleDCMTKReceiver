@@ -4,6 +4,19 @@
 
 The purpose of this program is to download studies from a specified PACS system. As input serves a csv file containing Study Instance UID(s).
 
+## Requirements
+
+You need to have the dcmtk toolkit installed. Additionally, if you want to use a  virtual environment (pipenv), you need to have pip/pipenv installed.
+
+## Install / Pipenv
+
+Use pipenv for the reproducible environment.
+    pipenv install
+    pipenv shell
+
+This will install the dependencies and start a virtual pipenv environment, in which you can execute the program.
+
+
 ## Usage
 
 ### config file
