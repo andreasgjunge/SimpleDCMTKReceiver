@@ -2,7 +2,7 @@ import os
 import subprocess
 
 def create_movescu_cmd(port_number_inc_assoc, study_instance_uid, target_directory, aet_name, aec_name, pacs_ip_adress, pacs_port):
-    cmd = ['movescu', '-S', '+P', str(port_number_inc_assoc), '-k', '0008,0052="STUDY"','-k', '0020,000D="'+str(study_instance_uid)+'"', '-od', str(target_directory), '-aet', str(aet_name), '-aec', str(aec_name), str(pacs_ip_adress), str(pacs_port), '-d']
+    cmd = ['movescu', '-S', '+P', str(port_number_inc_assoc), '-k', '0008,0052="SERIES"','-k', '0020,000D="'+str(study_instance_uid)+'"', '-od', str(target_directory), '-aet', str(aet_name), '-aec', str(aec_name), str(pacs_ip_adress), str(pacs_port), '-d']
     return cmd
 
 def create_folder(study_instance_uid):
@@ -29,4 +29,3 @@ def run_pacs_move(cmd, verbose):
         # The subprocess returned a non-zero exit code
         print("\033[31mAn error occured while trying to recive the images: {} \033[0m".format(" ".join(cmd)))
         print(e.stderr)
-    
